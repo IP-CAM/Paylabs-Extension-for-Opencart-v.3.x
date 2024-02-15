@@ -10,9 +10,9 @@ $_['text_paylabs']         = '<a onclick="window.open(\'https://paylabs.co.id\')
 // Input
 $_['input_paylabs_mid']     = 'Merchant ID';
 $_['input_paylabs_pub_key']     = 'Paylabs Public Key';
-$_['input_paylabs_priv_key']     = 'Paylabs Private Key';
+$_['input_paylabs_priv_key']     = 'Merchant Private Key';
 $_['input_paylabs_pub_key_sandbox']     = 'Paylabs Public Key (Sandbox)';
-$_['input_paylabs_priv_key_sandbox']     = 'Paylabs Private Key (Sandbox)';
+$_['input_paylabs_priv_key_sandbox']     = 'Merchant Private Key (Sandbox)';
 $_['input_paylabs_mode'] = 'Sandbox Mode';
 $_['input_paylabs_order_status'] = 'Change Order Status To';
 $_['input_paylabs_status'] = 'Paylabs Status';

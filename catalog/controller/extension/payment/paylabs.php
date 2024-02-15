@@ -250,8 +250,9 @@ class ControllerExtensionPaymentPaylabs extends Controller
         if ($result === FALSE) {
             throw new Exception('CURL Error: ' . curl_error($curl), curl_errno($curl));
         } else {
-            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             $response = json_decode($result);
+            $responseInfo = curl_getinfo($curl);
+            $httpcode = $responseInfo['http_code'];
             if ($httpcode != 200) {
                 $message = 'Paylabs Error (' . $result . '): ';
                 throw new Exception($message, $httpcode);
