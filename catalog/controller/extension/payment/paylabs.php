@@ -245,14 +245,12 @@ class ControllerExtensionPaymentPaylabs extends Controller
         ));
 
         $result = curl_exec($curl);
-        curl_close($curl);
 
         if ($result === FALSE) {
             throw new Exception('CURL Error: ' . curl_error($curl), curl_errno($curl));
         } else {
             $response = json_decode($result);
-            $responseInfo = curl_getinfo($curl);
-            $httpcode = $responseInfo['http_code'];
+            $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
             if ($httpcode != 200) {
                 $message = 'Paylabs Error (' . $result . '): ';
                 throw new Exception($message, $httpcode);
@@ -260,5 +258,6 @@ class ControllerExtensionPaymentPaylabs extends Controller
                 return $response;
             }
         }
+        curl_close($curl);
     }
 }
